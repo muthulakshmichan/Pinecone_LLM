@@ -14,13 +14,13 @@ from langchain.prompts import PromptTemplate
 index_name = 'canopy--document-uploader'
      
 pinecone.init(      
-	api_key='86da2ae5-d2fa-47d9-a799-40fddb11d2d5',      
+	api_key='Your API key',      
 	environment='gcp-starter'      
 )      
 index = pinecone.Index('canopy--document-uploader')
 
-PINECONE_API_KEY = os.getenv('86da2ae5-d2fa-47d9-a799-40fddb11d2d5') or '86da2ae5-d2fa-47d9-a799-40fddb11d2d5'
-PINECONE_ENVIRONMENT = os.getenv('gcp-starter') or 'gcp-starter'
+PINECONE_API_KEY = os.getenv('Your api code') or 'api key'
+PINECONE_ENVIRONMENT = os.getenv('ENVIRONMENT') or 'ENVIRONMENT'
 
 pinecone.init(
     api_key=PINECONE_API_KEY,
@@ -30,7 +30,7 @@ pinecone.init(
 index = pinecone.GRPCIndex(index_name)
 index.describe_index_stats()
 
-openai_api_key = "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"  
+openai_api_key = "Your API key"  
 model_name = 'text-embedding-ada-002'
 similarity_search_k = 5
 embed = OpenAIEmbeddings(
